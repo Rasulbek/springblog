@@ -8,6 +8,7 @@ import java.util.Collection;
 import java.util.List;
 
 public class User implements UserDetails {
+    private Long id;
     private String username;
     private String password;
     private List<Role> authorities;
@@ -24,17 +25,17 @@ public class User implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return null;
+        return authorities;
     }
 
     @Override
     public String getPassword() {
-        return null;
+        return password;
     }
 
     @Override
     public String getUsername() {
-        return null;
+        return username;
     }
 
     @Override
