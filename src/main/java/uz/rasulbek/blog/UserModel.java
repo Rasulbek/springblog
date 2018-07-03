@@ -10,8 +10,8 @@ public class UserModel implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    @Column(name = "user")
-    private String user;
+    @Column(name = "username")
+    private String username;
 
     @Column(name = "password")
     private String password;
@@ -23,18 +23,18 @@ public class UserModel implements Serializable {
     }
 
     public UserModel(String user, String password, String role) {
-        this.user = user;
+        this.username = user;
         this.password = password;
         this.role = role;
     }
 
     @Override
     public String toString() {
-        return String.format("Customer[id=%d, user=%s, password=%s, role=%s]",id,user,password,role);
+        return String.format("Customer[id=%d, user=%s, password=%s, role=%s]",id,username,password,role);
     }
 
     public String getUser() {
-        return user;
+        return username;
     }
 
     public String getPassword() {

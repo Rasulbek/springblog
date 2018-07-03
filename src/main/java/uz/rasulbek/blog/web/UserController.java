@@ -27,10 +27,10 @@ public class UserController {
     }
     @RequestMapping("/find")
     public void greeting(@RequestParam(value="name", defaultValue="") String name) {
-        System.out.println( rep.findByUser(name).toString());
+        System.out.println( rep.findByUsername(name).toString());
     }
     @RequestMapping("/try")
     public void tryLogin(@RequestParam(value="name", defaultValue="") String name,@RequestParam(value="pass", defaultValue="") String pass) {
-        System.out.println( rep.findByUserAndPassword(name,pass).toString());
+        System.out.println( rep.findByUsernameAndPassword(name,pass).toString());
     }
 }

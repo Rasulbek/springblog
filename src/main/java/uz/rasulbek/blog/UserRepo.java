@@ -8,8 +8,8 @@ import java.util.Optional;
 
 public interface UserRepo extends CrudRepository<UserModel, Long> {
 //    List<UserModel> findByUser(String user);
-    UserModel findByUser(String user);
+    UserModel findByUsername(String user);
 
-    Optional<UserModel> findByUserAndPassword(String user, String pass);
+    Optional<UserModel> findByUsernameAndPassword(String user, String pass);
 
 }

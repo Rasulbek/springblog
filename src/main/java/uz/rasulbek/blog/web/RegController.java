@@ -1,6 +1,7 @@
 package uz.rasulbek.blog.web;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -30,10 +31,10 @@ public class RegController {
             model.addAttribute("response","Parol juda kichik! Kamida 4 ta belgi bo'lishi kerak.");
         }else if(!password.equals(confirmation)){
             model.addAttribute("response","Parollar bir hil emas");
-        }else if(userRepo.findByUser(username)!=null){
+        }else if(userRepo.findByUsername(username)!=null){
             model.addAttribute("response","Ushbu <b>"+username+"</b> foydalanuvchi nomi band!");
         }else{
-            userRepo.save(new UserModel(username,password,"USER"));
+            userRepo.save(new UserModel(username,new BCryptPasswordEncoder().encode(password),"USER"));
             model.addAttribute("response",username+" muvaffaqqiyatli ro'yhatdan o'tdi!");
         }
         return "registration";
