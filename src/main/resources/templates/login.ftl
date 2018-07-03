@@ -31,21 +31,13 @@
                                 <button type="submit" class="btn btn-primary">Login</button>
                             </div>
                         </form>
-                        <div class="alert
-                                <#if logout>
-                                    alert-info
-                                </#if>
-                                <#if error>
-                                    alert-danger
-                                </#if>
-                        ">
-                            <#if logout>
-                                Siz tizimdan chiqdingiz!
-                            </#if>
-                            <#if error>
-                                Login yoki parol xato!
-                            </#if>
-                        </div>
+                        <#if logout>
+                                <div class="alert alert-info">Siz tizimdan chiqdingiz!</div>
+                        </#if>
+                        <#if error>
+                            <div class="alert alert-danger">Login yoki parol xato!</div>
+                        </#if>
+
                     </div>
                 </div>
             </div>
