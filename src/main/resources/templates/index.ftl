@@ -24,10 +24,11 @@
 
                 </div>
                 <h1>Blog Post</h1>
-                <p>Bu sayt Spring Boot + Security + Spring JPA + PostgreSQL'lardan foydalanib yaratildi.</p>
+                <p class="h2">Bu sayt Spring Boot + Security + Spring JPA + PostgreSQL'lardan foydalanib yaratildi.</p>
+                <p>Bu yerdan blog postlarga o'tsangiz bo'ladi:</p>
+                <a href="/blog" class="btn btn-lg btn-success">Blog Postlarga o'tish</a>
             </div>
-            <p>Bu yerdan blog postlarga o'tsangiz bo'ladi:</p>
-            <a href="/blog" class="btn btn-success">Bloglar</a>
+
         </div>
     </div>
 </div>

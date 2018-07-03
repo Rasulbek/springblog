@@ -20,6 +20,7 @@ public class BlogController {
     @Autowired
     private BlogRepo blogRepo;
 
+
     @RequestMapping("/blog")
     public String blogs(Model model){
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
