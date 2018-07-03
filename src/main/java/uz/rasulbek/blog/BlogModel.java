@@ -2,6 +2,7 @@ package uz.rasulbek.blog;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.sql.Timestamp;
 
 @Entity
 @Table(schema = "public", name = "blog")
@@ -17,14 +18,14 @@ public class BlogModel implements Serializable {
     @Column(name = "blog_text")
     private String blogText;
     @Column(name = "created")
-    private String created;
+    private Timestamp created;
     @Column(name = "viewed")
     private int viewed;
 
     public BlogModel() {
     }
 
-    public BlogModel(int userId, String title, String blogText, String created, int viewed) {
+    public BlogModel(int userId, String title, String blogText, Timestamp created, int viewed) {
         this.userId = userId;
         this.title = title;
         this.blogText = blogText;
@@ -55,7 +56,7 @@ public class BlogModel implements Serializable {
     }
 
     public String getCreated() {
-        return created;
+        return created.toString();
     }
 
     public int getViewed() {
