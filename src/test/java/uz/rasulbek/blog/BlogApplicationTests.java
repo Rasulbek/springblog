@@ -10,7 +10,7 @@ public class BlogApplicationTests {
 
 	@Test
 	public void testConfig(){
-		String pass = "pass";
+		String pass = "admin";
 		System.out.println(new BCryptPasswordEncoder().encode(pass));
 	}
 

@@ -6,19 +6,50 @@
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css"/>
 </head>
 <body>
-    <form name="f" method="POST" action="/login" class="form-signin">
-        <h2 class="form-heading">Log in</h2>
-
-        <div class="form-group">
-            <span><#if msg??>${msg}<#else>yo'q</#if> </span>
-            <input name="username" type="text" class="form-control" placeholder="Username"
-                   autofocus="true"/>
-            <input name="password" type="password" class="form-control" placeholder="Password"/>
-            <span><#if errorMsg??>${errorMsg}<#else>yo'q</#if> </span>
-
-            <button class="btn btn-lg btn-primary btn-block" type="submit">Log In</button>
+    <div class="container">
+        <div class="row">
+            <h1 class="page-header">Login</h1>
         </div>
-
-    </form>
+        <div class="row">
+            <div class="col-xs-4 col-xs-offset-4">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <form class="form-horizontal" method="post">
+                            <div class="form-group">
+                                <label class="control-label col-sm-3" for="login">Login:</label>
+                                <div class="col-sm-9">
+                                    <input class="form-control" id="login" placeholder="Login">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-3" for="pwd">Parol:</label>
+                                <div class="col-sm-9">
+                                    <input type="password" class="form-control" id="pwd" placeholder="Parol">
+                                </div>
+                            </div>
+                            <div class="form-group text-center">
+                                <button type="submit" class="btn btn-primary">Login</button>
+                            </div>
+                        </form>
+                        <div class="alert
+                                <#if logout>
+                                    alert-info
+                                </#if>
+                                <#if error>
+                                    alert-danger
+                                </#if>
+                        ">
+                            <#if logout>
+                                Siz tizimdan chiqdingiz!
+                            </#if>
+                            <#if error>
+                                Login yoki parol xato!
+                            </#if>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
