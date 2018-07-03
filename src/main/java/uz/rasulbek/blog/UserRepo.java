@@ -6,7 +6,7 @@ import org.springframework.data.repository.CrudRepository;
 import java.util.List;
 import java.util.Optional;
 
-public interface DBHelper extends CrudRepository<UserModel, Long> {
+public interface UserRepo extends CrudRepository<UserModel, Long> {
 //    List<UserModel> findByUser(String user);
     UserModel findByUser(String user);
 

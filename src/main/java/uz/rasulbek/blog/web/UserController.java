@@ -2,23 +2,27 @@ package uz.rasulbek.blog.web;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import uz.rasulbek.blog.DBHelper;
+import uz.rasulbek.blog.UserRepo;
 import uz.rasulbek.blog.UserModel;
 
 @Controller
 @RequestMapping(path="/users")
 public class UserController {
     @RequestMapping("/all")
-    public String getUserPage(){return "user";}
+    public String getUserPage(Model model){
+        model.addAttribute("users",rep.findAll());
+        return "user";
+    }
 
     @Autowired
-    DBHelper rep;
+    UserRepo rep;
+
     @RequestMapping("/init")
     public void proccess(){
-        rep.save(new UserModel("test","test","Test"));
+        rep.save(new UserModel("test1","test1","Test2"));
 //        return "Done";
     }
     @RequestMapping("/find")

@@ -10,13 +10,13 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserService implements UserDetailsService {
     @Autowired
-    private DBHelper dbHelper;
+    private UserRepo userRepo;
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        return new User(dbHelper.findByUser(username).getUser(),
-                "{noop}"+dbHelper.findByUser(username).getPassword(),
-                ImmutableList.of(Role.getRoleFromString(dbHelper.findByUser(username).getRole())));
+        return new User(userRepo.findByUser(username).getUser(),
+                "{noop}"+ userRepo.findByUser(username).getPassword(),
+                ImmutableList.of(Role.getRoleFromString(userRepo.findByUser(username).getRole())));
 //        return new User(username,"{noop}password", ImmutableList.of(Role.USER));
     }
 //
