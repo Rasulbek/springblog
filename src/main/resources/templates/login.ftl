@@ -15,16 +15,17 @@
                 <div class="panel panel-default">
                     <div class="panel-body">
                         <form class="form-horizontal" method="post">
+                            <input name="${_csrf.parameterName}" value="${_csrf.token}" type="hidden">
                             <div class="form-group">
                                 <label class="control-label col-sm-3" for="login">Login:</label>
                                 <div class="col-sm-9">
-                                    <input class="form-control" id="login" placeholder="Login">
+                                    <input name="username" class="form-control" id="login" placeholder="Login">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-sm-3" for="pwd">Parol:</label>
                                 <div class="col-sm-9">
-                                    <input type="password" class="form-control" id="pwd" placeholder="Parol">
+                                    <input name="password" type="password" class="form-control" id="pwd" placeholder="Parol">
                                 </div>
                             </div>
                             <div class="form-group text-center">
