@@ -15,7 +15,7 @@ public class UserService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         return new User(userRepo.findByUser(username).getUser(),
-                "{noop}"+ userRepo.findByUser(username).getPassword(),
+                userRepo.findByUser(username).getPassword(),
                 ImmutableList.of(Role.getRoleFromString(userRepo.findByUser(username).getRole())));
 //        return new User(username,"{noop}password", ImmutableList.of(Role.USER));
     }
