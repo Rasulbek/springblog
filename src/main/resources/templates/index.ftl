@@ -12,7 +12,16 @@
         <div class="container">
             <div class="jumbotron">
                 <div class="h4 text-right">
-                    Hush kelibsiz, ${user}!
+                    <#if user??>
+                        Hush kelibsiz, <strong>${user}</strong>!
+                        <#--<i class="glyphicon glyphicon-log-out"></i>-->
+                        <a href="/logout"> Logout</a>
+                        <#else>
+                            Hush kelibsiz, mehmon!
+                            <#--<i class="glyphicon glyphicon-log-in"></i> -->
+                            <a href="/login"> Login</a>
+                    </#if>
+
                 </div>
                 <h1>Blog Post</h1>
                 <p>Bu sayt Spring Boot + Security + Spring JPA + PostgreSQL'lardan foydalanib yaratildi.</p>

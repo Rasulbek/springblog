@@ -21,7 +21,7 @@ public class MainController {
             User user = (User)  auth.getPrincipal();
             model.addAttribute("user",user.getUsername());
         }catch (Exception e){
-            model.addAttribute("user","mehmon");
+//            model.addAttribute("user","mehmon");
         }
         return "index";
     }
