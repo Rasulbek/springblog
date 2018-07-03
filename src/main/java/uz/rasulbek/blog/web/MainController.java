@@ -35,17 +35,5 @@ public class MainController {
         return "login";
     }
 
-    @Autowired
-    private BlogRepo blogRepo;
-    @RequestMapping("/blog")
-    public String blogs(Model model){
-        model.addAttribute("blogs", blogRepo.findByUserId(1));
-        return "blogs";
-    }
 
-    @RequestMapping("/addblog")
-    public String add(){
-        blogRepo.save(new BlogModel(1,"Yaratilgan title","desc"));
-        return "ok";
-    }
 }
