@@ -69,7 +69,8 @@ public class BlogController {
         }catch (Exception e){
 
         }
-        model.addAttribute("blog", blogRepo.findById(Long.valueOf(id)).get());
+//        model.addAttribute("blog", blogRepo.findById(Long.valueOf(id)).get());
+        model.addAttribute("blog", blogRepo.findById2(id));
         return "blog";
     }
 }

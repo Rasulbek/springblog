@@ -63,6 +63,10 @@ public class BlogModel implements Serializable {
         return viewed;
     }
 
+    public void setViewed(){
+        this.viewed++;
+    }
+
     public String[] getFormattedDate(){
         String str[]={"13","Fev","1994"};
         String mnth[]={"Yan","Fev","Mar","Apr","May","Iyn","Iyl","Avg","Sen","Okt","Noy","Dek"};
