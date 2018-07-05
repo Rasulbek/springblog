@@ -62,4 +62,19 @@ public class BlogModel implements Serializable {
     public int getViewed() {
         return viewed;
     }
+
+    public String[] getFormattedDate(){
+        String str[]={"13","Fev","1994"};
+        String mnth[]={"Yan","Fev","Mar","Apr","May","Iyn","Iyl","Avg","Sen","Okt","Noy","Dek"};
+        str[0] = created.getDate()+"";
+        str[1] = mnth[created.getMonth()];
+        str[2] = (1900+created.getYear())+"";
+        return str;
+    }
+
+    public String getDescription(){
+        String descr = blogText.replaceAll("\\<[^>]*>","");
+        descr = descr.substring(0, Math.min(100,descr.length()));
+        return descr;
+    }
 }

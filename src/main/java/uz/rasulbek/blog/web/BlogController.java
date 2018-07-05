@@ -5,6 +5,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -57,5 +58,18 @@ public class BlogController {
         blogRepo.save(new BlogModel(1,title,blogtext, new Timestamp(System.currentTimeMillis()),0));
         httpServletResponse.sendRedirect("/blog");
 
+    }
+
+    @RequestMapping("/blog/{blogId}")
+    public String blog(@PathVariable(value="blogId") int id, Model model){
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        try{
+            User user = (User)  auth.getPrincipal();
+            model.addAttribute("user",user.getUsername());
+        }catch (Exception e){
+
+        }
+        model.addAttribute("blog", blogRepo.findById(Long.valueOf(id)).get());
+        return "blog";
     }
 }
