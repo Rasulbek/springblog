@@ -36,6 +36,7 @@ public class RegController {
         }else{
             userRepo.save(new UserModel(username,new BCryptPasswordEncoder().encode(password),"USER"));
             model.addAttribute("response",username+" muvaffaqqiyatli ro'yhatdan o'tdi!");
+            return "login";
         }
         return "registration";
     }

@@ -8,18 +8,24 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import uz.rasulbek.blog.BlogModel;
-import uz.rasulbek.blog.BlogRepo;
-import uz.rasulbek.blog.User;
+import uz.rasulbek.blog.*;
 
 @Controller
 public class MainController {
+    PageConfig pageConfig = PageConfig.get();
+
+    @Autowired
+    private UserRepo userRepo;
+
     @RequestMapping("/")
     public String getMainPage(Model model){
+
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         try{
             User user = (User)  auth.getPrincipal();
-            model.addAttribute("user",user.getUsername());
+            pageConfig.setUserName(user.getUsername());
+            pageConfig.setUserId((int)userRepo.findByUsername(user.getUsername()).getId());
+            model.addAttribute("user",pageConfig.getUserName());
         }catch (Exception e){
 //            model.addAttribute("user","mehmon");
         }
@@ -32,6 +38,7 @@ public class MainController {
                            Model model){
         model.addAttribute("error", error!=null);
         model.addAttribute("logout", logout!=null);
+
         return "login";
     }
 

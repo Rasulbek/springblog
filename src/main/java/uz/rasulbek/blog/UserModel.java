@@ -33,6 +33,10 @@ public class UserModel implements Serializable {
         return String.format("Customer[id=%d, user=%s, password=%s, role=%s]",id,username,password,role);
     }
 
+    public long getId() {
+        return id;
+    }
+
     public String getUser() {
         return username;
     }

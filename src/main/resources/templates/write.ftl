@@ -36,6 +36,7 @@
                     <div class="col-xs-10 col-xs-offset-1">
                         <form class="form-horizontal" method="post">
                             <input name="${_csrf.parameterName}" value="${_csrf.token}" type="hidden">
+                            <label>Sizning ID: ${userId}</label>
                             <div class="form-group">
                                 <label class="control-label" for="title">Sarlavha:</label>
                                 <input name="title" class="form-control" id="title" placeholder="Sarlavha">
