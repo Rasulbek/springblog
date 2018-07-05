@@ -22,6 +22,7 @@ public class BlogModel implements Serializable {
     @Column(name = "viewed")
     private int viewed;
 
+    private UserModel userModel;
     public BlogModel() {
     }
 
@@ -80,5 +81,15 @@ public class BlogModel implements Serializable {
         String descr = blogText.replaceAll("\\<[^>]*>","");
         descr = descr.substring(0, Math.min(100,descr.length()));
         return descr;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private UserModel getUserModel(){
+        return userModel;
+    }
+
+    private void setUserModel(UserModel userModel1){
+        this.userModel=userModel1;
     }
 }

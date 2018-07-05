@@ -2,6 +2,7 @@ package uz.rasulbek.blog;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Set;
 
 @Entity
 @Table(schema = "public", name = "user")
@@ -48,4 +49,13 @@ public class UserModel implements Serializable {
     public String getRole() {
         return role;
     }
+
+    /*@OneToMany(mappedBy = "user_id", cascade = CascadeType.ALL)
+    public Set<BlogModel> getBlogModel() {
+        return blogModels;
+    }
+
+    public void setBooks(Set<BlogModel> blogModels) {
+        this.blogModels = blogModels;
+    }*/
 }
