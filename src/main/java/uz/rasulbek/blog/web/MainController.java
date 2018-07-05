@@ -18,7 +18,7 @@ public class MainController {
     private UserRepo userRepo;
 
     @RequestMapping("/")
-    public String getMainPage(Model model){
+    public String getMainPage(@RequestParam(value = "info", required = false) String info,Model model){
 
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         try{
@@ -29,6 +29,7 @@ public class MainController {
         }catch (Exception e){
 //            model.addAttribute("user","mehmon");
         }
+        model.addAttribute("info", info!=null);
         return "index";
     }
 

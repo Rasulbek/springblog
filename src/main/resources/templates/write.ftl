@@ -12,7 +12,7 @@
                 <a class="navbar-brand" href="/">Blog Post</a>
             </div>
             <ul class="nav navbar-nav">
-                <li><a href="/blog">Bloglar</a></li>
+                <li><a href="/blogs">Bloglar</a></li>
                 <li class="active"><a href="/newblog"><span class="glyphicon glyphicon-pencil"></span> Yangi blog</a></li>
 
             </ul>

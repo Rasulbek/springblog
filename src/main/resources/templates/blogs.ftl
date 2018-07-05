@@ -13,7 +13,7 @@
                 <a class="navbar-brand" href="/">Blog Post</a>
             </div>
             <ul class="nav navbar-nav">
-                <li class="active"><a href="/blog">Bloglar</a></li>
+                <li class="active"><a href="/blogs">Bloglar</a></li>
                 <li><a href="/newblog"><span class="glyphicon glyphicon-pencil"></span> Yangi blog</a></li>
 
             </ul>
@@ -24,6 +24,7 @@
         </div>
     </nav>
     <div class="container" style="margin-top: 70px">
+        <div class="h2 page-header">Bloglar</div>
         <table class="table">
 
         <#list blogs as blog>
@@ -53,6 +54,14 @@
             Blog yo'q
         </#list>
         </table>
+        <div class="text-center">
+            <ul class="pagination">
+                <li class="<#if cp==1>active</#if>"><a href="?page=1">1</a></li>
+                <li class="<#if cp==2>active</#if>"><a href="?page=2">2</a></li>
+                <li class="<#if cp==3>active</#if>"><a href="?page=3">3</a></li>
+                <li class="<#if cp==4>active</#if>"><a href="?page=4">4</a></li>
+            </ul>
+        </div>
     </div>
 
 

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>BlogPostlar</title>
+    <title>${blog.getTitle()}</title>
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css"/>
 </head>
 <body>
@@ -12,7 +12,7 @@
                 <a class="navbar-brand" href="/">Blog Post</a>
             </div>
             <ul class="nav navbar-nav">
-                <li class="active"><a href="/blog">Bloglar</a></li>
+                <li class="active"><a href="/blogs">Bloglar</a></li>
                 <li><a href="/newblog"><span class="glyphicon glyphicon-pencil"></span> Yangi blog</a></li>
 
             </ul>
@@ -23,15 +23,11 @@
         </div>
     </nav>
     <div class="container" style="margin-top: 70px">
-        <#--<#list blogs as blog>-->
             <div class="panel panel-default">
-                <div class="panel-heading">${blog.getTitle()}</div>
+                <div class="panel-heading"><h3>${blog.getTitle()}</h3></div>
                 <div class="panel-body">${blog.getBlogText()} <br>${blog.getCreated()}</div>
                 <div class="panel-footer">Creted by: #{blog.getUserId()}  Viewed: #{blog.getViewed()}</div>
             </div>
-        <#--<#else>-->
-            <#--Blog yo'q-->
-        <#--</#list>-->
     </div>
 
 

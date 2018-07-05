@@ -35,8 +35,8 @@ public class RegController {
             model.addAttribute("response","Ushbu <b>"+username+"</b> foydalanuvchi nomi band!");
         }else{
             userRepo.save(new UserModel(username,new BCryptPasswordEncoder().encode(password),"USER"));
-            model.addAttribute("response",username+" muvaffaqqiyatli ro'yhatdan o'tdi!");
-            return "login";
+//            model.addAttribute("response",username+" muvaffaqqiyatli ro'yhatdan o'tdi!");
+            return "redirect:/?info";
         }
         return "registration";
     }
