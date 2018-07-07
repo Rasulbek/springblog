@@ -23,6 +23,11 @@
         </div>
     </nav>
     <div class="container" style="margin-top: 70px">
+        <ul class="breadcrumb">
+            <li><a class="breadcrumb-item" href="/">Bosh sahifa</a></li>
+            <li><a class="breadcrumb-item" href="/blogs">Bloglar</a></li>
+            <li><span class="breadcrumb-item active">${blog.getTitle()}</span></li>
+        </ul>
             <div class="panel panel-default">
                 <div class="panel-heading"><h3>${blog.getTitle()}</h3></div>
                 <div class="panel-body">${blog.getBlogText()} <br>${blog.getCreated()}</div>

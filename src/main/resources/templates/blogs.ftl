@@ -24,6 +24,10 @@
         </div>
     </nav>
     <div class="container" style="margin-top: 70px">
+        <ul class="breadcrumb">
+            <li><a class="breadcrumb-item" href="/">Bosh sahifa</a></li>
+            <li><span class="breadcrumb-item active">Bloglar</span></li>
+        </ul>
         <div class="h2 page-header">Bloglar</div>
         <table class="table">
 

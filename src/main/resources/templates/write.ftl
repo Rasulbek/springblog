@@ -22,9 +22,15 @@
             </ul>
         </div>
     </nav>
-    <div class="container" style="margin-top: 40px">
+    <div class="container" style="margin-top: 70px">
+        <ul class="breadcrumb">
+            <li><a class="breadcrumb-item" href="/">Bosh sahifa</a></li>
+            <li><a class="breadcrumb-item" href="/blogs">Bloglar</a></li>
+            <li><span class="breadcrumb-item active">Yangi blog</span></li>
+        </ul>
         <div class="row">
-            <h1 class="page-header">Yangi blog yozish</h1>
+            <h1>Yangi blog yozish</h1>
+            <hr/>
         </div>
         <div class="row">
 
