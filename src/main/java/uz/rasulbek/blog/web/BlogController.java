@@ -24,18 +24,8 @@ public class BlogController {
     @RequestMapping(value = "/blogs")
     public String blogs(@RequestParam(name="page", required = false,defaultValue = "1") int pageId, Model model){
         model.addAttribute("user",pageConfig.getUserName());
-
-        List<BlogModel> allBlogs=blogRepo.findAll();
-        List<BlogModel> pagedBlogs = new ArrayList<>();
-        int p1 =((pageId-1)*5+1);
-        while (p1<pageId*5){
-            if (p1>=allBlogs.size())break;
-            pagedBlogs.add(allBlogs.get(p1));
-            p1++;
-        }
-        model.addAttribute("blogs", pagedBlogs);
         model.addAttribute("cp", pageId);
-        return "blogs";
+        return "blogsang";
     }
 
     @RequestMapping("/addblog")
